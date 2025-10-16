@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       jazz-tools:
-        specifier: ^0.18.22
-        version: 0.18.22(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.18.26
+        version: 0.18.26(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -24,6 +24,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.1.10
         version: 4.1.14
+      '@types/node':
+        specifier: ^24.7.2
+        version: 24.7.2
       '@types/react':
         specifier: 19.1.0
         version: 19.1.0
@@ -32,22 +35,28 @@ importers:
         version: 19.1.0(@types/react@19.1.0)
       '@vitejs/plugin-react':
         specifier: ^4.5.1
-        version: 4.7.0(vite@6.3.5(jiti@2.6.1)(lightningcss@1.30.1))
+        version: 4.7.0(vite@6.3.5(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1))
       globals:
         specifier: ^15.11.0
         version: 15.15.0
+      mprocs:
+        specifier: ^0.7.3
+        version: 0.7.3
       postcss:
         specifier: ^8.4.40
         version: 8.5.6
       tailwindcss:
         specifier: ^4.1.10
         version: 4.1.14
+      tsx:
+        specifier: ^4.20.6
+        version: 4.20.6
       typescript:
         specifier: 5.6.2
         version: 5.6.2
       vite:
         specifier: 6.3.5
-        version: 6.3.5(jiti@2.6.1)(lightningcss@1.30.1)
+        version: 6.3.5(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1)
 
 packages:
 
@@ -631,6 +640,9 @@ packages:
   '@types/mdurl@2.0.0':
     resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==}
 
+  '@types/node@24.7.2':
+    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
+
   '@types/prosemirror-model@1.17.0':
     resolution: {integrity: sha512-lG5xEMkE8r8Soa80KdWPTbCLUaSHBHVHpTIEsQiebfONpvmS5061IMGzHUdb1oWjgrwh8EJq0GgMNwXHUx5mVg==}
     deprecated: This is a stub types definition. prosemirror-model provides its own type definitions, so you do not need this installed.
@@ -688,63 +700,63 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  cojson-core-napi-darwin-arm64@0.18.22:
-    resolution: {integrity: sha512-5TFLOWxbeuMLF9xMx+O3QL3JrVSe7xIvf7Deh5Q0fxqDej6DcMrMmdNRHmiVc7JPcdfVpM1Yz72ma0xpSWpO1g==}
+  cojson-core-napi-darwin-arm64@0.18.26:
+    resolution: {integrity: sha512-ICg2CcfmXQwEyzyJF7Fi0jFob3H8dVgTGCJ84bHAQ8bD9miK25A/oKXpMq5NxJReiAVIiY3CNsc2k1ce4Bo32w==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm64]
     os: [darwin]
 
-  cojson-core-napi-darwin-x64@0.18.22:
-    resolution: {integrity: sha512-U7LUOqFekQ1lr70pn3bxSoklWeUR2f3VQBfcehqdTMASyzFbBlFmDYy/c/geerocUdaogiMI2Dk1EzA1rKVzKQ==}
+  cojson-core-napi-darwin-x64@0.18.26:
+    resolution: {integrity: sha512-Koltq2za3shYqnn25Sw9oj6TYZ/jEt6v+4bbbp4CyU+N7z5vTaQzPaqu/pE0R2oX09UgVHz/pDLnhnnMGIDhKA==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [x64]
     os: [darwin]
 
-  cojson-core-napi-linux-arm-gnueabihf@0.18.22:
-    resolution: {integrity: sha512-Foee7VEWnGAjlEjaQoWyzSmhxgDUZ3BcGOB6Q+C1+JTzqiUFp+f1eFkMoT680oeDmAMLvXmEXbLObjm1W9QwEA==}
+  cojson-core-napi-linux-arm-gnueabihf@0.18.26:
+    resolution: {integrity: sha512-RLL0t/Qb4GIvznv57a5ukLoPr5sNL0iLsX3mIpxE9F+zOK2PJ73HpZrihs8TmjbWgbpkdPhejgtW/0Y3r8je7A==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm]
     os: [linux]
 
-  cojson-core-napi-linux-arm64-gnu@0.18.22:
-    resolution: {integrity: sha512-2AeuSX65m38wn1cuRfyTETQKbkz985NaQS/3ikgSdh5T2r+62CJEkfDWhvkJPKzXiBmNhTVwTnAtTkJSHbbrfw==}
+  cojson-core-napi-linux-arm64-gnu@0.18.26:
+    resolution: {integrity: sha512-rK5iVkJEbsX9rA+90W+9VA0ReAEccYcTHTTfW6dxkGXW/1OlmeYo3g+nXXzJdVBwI38TVA6w6F5g2Tl/yLRjfw==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm64]
     os: [linux]
 
-  cojson-core-napi-linux-arm64-musl@0.18.22:
-    resolution: {integrity: sha512-Gko1PGYYqkxdui4fNSv1hYQulnbiXqcEM2+lvhmDOS2NGraWE7uMUxDGxDBff2svhNJ/RY1UJ/HwZ8ILnyzeCA==}
+  cojson-core-napi-linux-arm64-musl@0.18.26:
+    resolution: {integrity: sha512-Qrmw6alEPX2Pika8cLC/KjKSY+7E2aRNRh9KFqavcmhrILKPNuaznP7gp6yHJ+XRqVmYSqeE0e0sm9Cxwz7U4Q==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm64]
     os: [linux]
 
-  cojson-core-napi-linux-x64-gnu@0.18.22:
-    resolution: {integrity: sha512-Ke1lY5VDNs2r6PadsMZAckmvYS8RMTVRjRlbufnQEjTUyrTH/i9g98njKEt3QBUGCggPy9/IJzgDDiJFJ33puQ==}
+  cojson-core-napi-linux-x64-gnu@0.18.26:
+    resolution: {integrity: sha512-cfq3SVOCJLPf/wbyg8on9MCLz01KRvzWSHyzIw8WEWg6/JjhVjC9jjgkjr9mDicUHNCOUr0idXGtH3GApDyAzg==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [x64]
     os: [linux]
 
-  cojson-core-napi-linux-x64-musl@0.18.22:
-    resolution: {integrity: sha512-pkQZ5u4KiSDAzXFrW8385Orxtzlu9YavKVeA8t0fsSD/8dmt0U/XE7O/NFM6MNw9M7fStORiHJ5uYMS7VvHoFw==}
+  cojson-core-napi-linux-x64-musl@0.18.26:
+    resolution: {integrity: sha512-0LG+DHJjKNMTkeoB82TTk75qT6Oo2gvSyl6xmp+ggDLXH/LLdgrNJUYYn3ury/p94Sc90ZbsLmxukK5toecUGA==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [x64]
     os: [linux]
 
-  cojson-core-napi@0.18.22:
-    resolution: {integrity: sha512-VRMMlygVq0g1jxWsgrmkE8KpjdFqjfVOdvGbl1J6aXGCrV9KmM5t0GGsCSuyDXV/b/clgVsXbyzb4NSIKqTGFw==}
+  cojson-core-napi@0.18.26:
+    resolution: {integrity: sha512-FSyBsu4t/iHhSsV9ZO19qvvrla3qgPcyqvzmnIgePLoYg3fFZ4y18E24Aq+10UH4cl5I9uZMtefwTIfYwV8ivA==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
 
-  cojson-core-wasm@0.18.22:
-    resolution: {integrity: sha512-TbUG+oKzdejgexqCJamNp8Uvf23pf17NV0C/G32DoufFogq/XMajtfbEXoNaCrKaYX2kCwrC60WV+pQNbg214A==}
+  cojson-core-wasm@0.18.26:
+    resolution: {integrity: sha512-wb1DJPQVTAXvJEjoNVyPl8PhEwYmHDg86QJApGUprw+tgXCTl9vMCKZuAeC0KK5WoEnOcwzPNxMKKCdnepAfpg==}
 
-  cojson-storage-indexeddb@0.18.22:
-    resolution: {integrity: sha512-5v84M87ByCORJAuGVSshXRwR/cq0WfQpjH9TeoXaMUIlArcu6zRWFLFIjqjrcuJFGqVXdb+1hMoFXStXDs7LOA==}
+  cojson-storage-indexeddb@0.18.26:
+    resolution: {integrity: sha512-JlzDSsNDkQ8fAYV39JNe3BpbpFuQiI82G6lIG8D7iPpJPJ+r8x32B3otYQVuebahQq5t5r7nVlzoOwq8s536eA==}
 
-  cojson-transport-ws@0.18.22:
-    resolution: {integrity: sha512-LkH2Ple7aHU1OJ0ye42iujhbCneXn+7edF/pjeRjtsrsNQ4g1+kBNcJBOXM3TPwqhm3S4QvyzgT8Zr4W2NED1A==}
+  cojson-transport-ws@0.18.26:
+    resolution: {integrity: sha512-yNoJSBfKlNVqjIN2L/RF8M+r34Lg3WvjEgjHxab335zKR0I5LQJoJ6wYIfa+F5esR5SckDetIBiyySGstY5m2Q==}
 
-  cojson@0.18.22:
-    resolution: {integrity: sha512-nmiYZswNT2Ml5v8/3X++fY+cNdFJHXIYfd4xRLb0wfLoYUJN7LEI0ml1dSGzl9fMw7sViq76oa8HnrAAnhf7OQ==}
+  cojson@0.18.26:
+    resolution: {integrity: sha512-1A2OD7manJg9lAK0edOQtIxtO7AJWj/HCfZejUZ7oJtjhTAQb0JKwqEV4cMFQqe3gi6Wc3VELHZomNIzcAqXsQ==}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -817,6 +829,9 @@ packages:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
 
+  get-tsconfig@4.12.0:
+    resolution: {integrity: sha512-LScr2aNr2FbjAjZh2C6X6BxRx1/x+aTDExct/xyq2XKbYOiG5c0aK7pMsSuyc0brz3ibr/lbQiHD9jzt4lccJw==}
+
   globals@15.15.0:
     resolution: {integrity: sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg==}
     engines: {node: '>=18'}
@@ -829,8 +844,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  jazz-tools@0.18.22:
-    resolution: {integrity: sha512-w8TuWMd+CMluuaPI+AuMeu0meFeYE/R9ZtpWO5Azkh3ZF36Hw6Fa2DYnVV9CHg+z3qhPf2yY3sy0L4CLngtIBw==}
+  jazz-tools@0.18.26:
+    resolution: {integrity: sha512-o89Ncdx1cCo123OWKCVzVO5YXu6ECPl5eNPBPrJvHL8HtkgSNuF+QUJGrCj3rmFT1qny6JHsozErSwFL3JUrqw==}
     peerDependencies:
       '@bam.tech/react-native-image-resizer': '*'
       '@op-engineering/op-sqlite': '*'
@@ -987,6 +1002,11 @@ packages:
     resolution: {integrity: sha512-KZxYo1BUkWD2TVFLr0MQoM8vUUigWD3LlD83a/75BqC+4qE0Hb1Vo5v1FgcfaNXvfXzr+5EhQ6ing/CaBijTlw==}
     engines: {node: '>= 18'}
 
+  mprocs@0.7.3:
+    resolution: {integrity: sha512-I1Ptja/UnNVVSV5QEnBdiiwW70HMWJlmnMq6nvw4J7fwZ3s8UZGuf/FG+FTAUr6CLfat8kriHj+mWLx7xsLKSw==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -1037,11 +1057,17 @@ packages:
   prosemirror-gapcursor@1.3.2:
     resolution: {integrity: sha512-wtjswVBd2vaQRrnYZaBCbyDqr232Ed4p2QPtRIUK5FuqHYKGWkEwl08oQM4Tw7DOR0FsasARV5uJFvMZWxdNxQ==}
 
+  prosemirror-gapcursor@1.4.0:
+    resolution: {integrity: sha512-z00qvurSdCEWUIulij/isHaqu4uLS8r/Fi61IbjdIPJEonQgggbJsLnstW7Lgdk4zQ68/yr6B6bf7sJXowIgdQ==}
+
   prosemirror-history@1.4.1:
     resolution: {integrity: sha512-2JZD8z2JviJrboD9cPuX/Sv/1ChFng+xh2tChQ2X4bB2HeK+rra/bmJ3xGntCcjhOqIzSDG6Id7e8RJ9QPXLEQ==}
 
   prosemirror-inputrules@1.5.0:
     resolution: {integrity: sha512-K0xJRCmt+uSw7xesnHmcn72yBGTbY45vm8gXI4LZXbx2Z0jwh5aF9xrGQgrVPu0WbyFVFF3E/o9VhJYz6SQWnA==}
+
+  prosemirror-inputrules@1.5.1:
+    resolution: {integrity: sha512-7wj4uMjKaXWAQ1CDgxNzNtR9AlsuwzHfdFH1ygEHA2KHF2DOEaXl1CJfNPAKCg9qNEh4rum975QLaCiQPyY6Fw==}
 
   prosemirror-keymap@1.2.3:
     resolution: {integrity: sha512-4HucRlpiLd1IPQQXNqeo81BGtkY8Ai5smHhKW9jjPKRc2wQIxksg7Hl1tTI2IfT2B/LgX6bfYvXxEpJl7aKYKw==}
@@ -1080,6 +1106,9 @@ packages:
   prosemirror-view@1.41.2:
     resolution: {integrity: sha512-PGS/jETmh+Qjmre/6vcG7SNHAKiGc4vKOJmHMPRmvcUl7ISuVtrtHmH06UDUwaim4NDJfZfVMl7U7JkMMETa6g==}
 
+  prosemirror-view@1.41.3:
+    resolution: {integrity: sha512-SqMiYMUQNNBP9kfPhLO8WXEk/fon47vc52FQsUiJzTBuyjKgEcoAwMyF04eQ4WZ2ArMn7+ReypYL60aKngbACQ==}
+
   punycode.js@2.3.1:
     resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
     engines: {node: '>=6'}
@@ -1096,6 +1125,9 @@ packages:
   react@19.1.0:
     resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
     engines: {node: '>=0.10.0'}
+
+  resolve-pkg-maps@1.0.0:
+    resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
   rfc6902@3.1.1:
     resolution: {integrity: sha512-aHiEm2S4mQSyyIaK7NVotfmVkgOOn1K9iuuSCIKJ8eIAte/8o06Vp06Z2NcLrmMahDmA+2F6oHx33P4NOQ1JnQ==}
@@ -1134,6 +1166,11 @@ packages:
     resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
     engines: {node: '>=12.0.0'}
 
+  tsx@4.20.6:
+    resolution: {integrity: sha512-ytQKuwgmrrkDTFP4LjR0ToE2nqgy886GpvRSpU0JAnrdBYppuY5rLkRUYPU1yCryb24SsKBTL/hlDQAEFVwtZg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   typescript@5.6.2:
     resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
     engines: {node: '>=14.17'}
@@ -1141,6 +1178,9 @@ packages:
 
   uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
+
+  undici-types@7.14.0:
+    resolution: {integrity: sha512-QQiYxHuyZ9gQUIrmPo3IA+hUl4KYk8uSA7cHrcKd/l3p1OTpZcM0Tbp9x7FAtXdAYhlasd60ncPpgu6ihG6TOA==}
 
   unicode-segmenter@0.12.0:
     resolution: {integrity: sha512-PK6M1A1tt3ky6cFAJW/JOO9ml/sbEvim+SL75FM8slck08ACbF0TZj+tdUd3Mh8Tk5XieqUDPwmLjiyRQvb4pw==}
@@ -1205,6 +1245,11 @@ packages:
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
+
+  yaml@2.8.1:
+    resolution: {integrity: sha512-lcYcMxX2PO9XMGvAJkJ3OsNMw+/7FKes7/hgerGUYWIoWu5j/+YQqcZr5JnPZWzOsEBgMbSbiSTn/dv/69Mkpw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
 
   zod@4.1.11:
     resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
@@ -1650,9 +1695,9 @@ snapshots:
       prosemirror-collab: 1.3.1
       prosemirror-commands: 1.7.1
       prosemirror-dropcursor: 1.8.2
-      prosemirror-gapcursor: 1.3.2
+      prosemirror-gapcursor: 1.4.0
       prosemirror-history: 1.4.1
-      prosemirror-inputrules: 1.5.0
+      prosemirror-inputrules: 1.5.1
       prosemirror-keymap: 1.2.3
       prosemirror-markdown: 1.13.2
       prosemirror-menu: 1.2.5
@@ -1661,9 +1706,9 @@ snapshots:
       prosemirror-schema-list: 1.5.1
       prosemirror-state: 1.4.3
       prosemirror-tables: 1.8.1
-      prosemirror-trailing-node: 3.0.0(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.2)
+      prosemirror-trailing-node: 3.0.0(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
       prosemirror-transform: 1.10.4
-      prosemirror-view: 1.41.2
+      prosemirror-view: 1.41.3
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -1697,6 +1742,10 @@ snapshots:
 
   '@types/mdurl@2.0.0': {}
 
+  '@types/node@24.7.2':
+    dependencies:
+      undici-types: 7.14.0
+
   '@types/prosemirror-model@1.17.0':
     dependencies:
       prosemirror-model: 1.25.3
@@ -1725,7 +1774,7 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@vitejs/plugin-react@4.7.0(vite@6.3.5(jiti@2.6.1)(lightningcss@1.30.1))':
+  '@vitejs/plugin-react@4.7.0(vite@6.3.5(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1))':
     dependencies:
       '@babel/core': 7.28.4
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.28.4)
@@ -1733,7 +1782,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 6.3.5(jiti@2.6.1)(lightningcss@1.30.1)
+      vite: 6.3.5(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -1755,57 +1804,57 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  cojson-core-napi-darwin-arm64@0.18.22:
+  cojson-core-napi-darwin-arm64@0.18.26:
     optional: true
 
-  cojson-core-napi-darwin-x64@0.18.22:
+  cojson-core-napi-darwin-x64@0.18.26:
     optional: true
 
-  cojson-core-napi-linux-arm-gnueabihf@0.18.22:
+  cojson-core-napi-linux-arm-gnueabihf@0.18.26:
     optional: true
 
-  cojson-core-napi-linux-arm64-gnu@0.18.22:
+  cojson-core-napi-linux-arm64-gnu@0.18.26:
     optional: true
 
-  cojson-core-napi-linux-arm64-musl@0.18.22:
+  cojson-core-napi-linux-arm64-musl@0.18.26:
     optional: true
 
-  cojson-core-napi-linux-x64-gnu@0.18.22:
+  cojson-core-napi-linux-x64-gnu@0.18.26:
     optional: true
 
-  cojson-core-napi-linux-x64-musl@0.18.22:
+  cojson-core-napi-linux-x64-musl@0.18.26:
     optional: true
 
-  cojson-core-napi@0.18.22:
+  cojson-core-napi@0.18.26:
     optionalDependencies:
-      cojson-core-napi-darwin-arm64: 0.18.22
-      cojson-core-napi-darwin-x64: 0.18.22
-      cojson-core-napi-linux-arm-gnueabihf: 0.18.22
-      cojson-core-napi-linux-arm64-gnu: 0.18.22
-      cojson-core-napi-linux-arm64-musl: 0.18.22
-      cojson-core-napi-linux-x64-gnu: 0.18.22
-      cojson-core-napi-linux-x64-musl: 0.18.22
+      cojson-core-napi-darwin-arm64: 0.18.26
+      cojson-core-napi-darwin-x64: 0.18.26
+      cojson-core-napi-linux-arm-gnueabihf: 0.18.26
+      cojson-core-napi-linux-arm64-gnu: 0.18.26
+      cojson-core-napi-linux-arm64-musl: 0.18.26
+      cojson-core-napi-linux-x64-gnu: 0.18.26
+      cojson-core-napi-linux-x64-musl: 0.18.26
 
-  cojson-core-wasm@0.18.22: {}
+  cojson-core-wasm@0.18.26: {}
 
-  cojson-storage-indexeddb@0.18.22:
+  cojson-storage-indexeddb@0.18.26:
     dependencies:
-      cojson: 0.18.22
+      cojson: 0.18.26
 
-  cojson-transport-ws@0.18.22:
+  cojson-transport-ws@0.18.26:
     dependencies:
       '@opentelemetry/api': 1.9.0
-      cojson: 0.18.22
+      cojson: 0.18.26
 
-  cojson@0.18.22:
+  cojson@0.18.26:
     dependencies:
       '@noble/ciphers': 1.3.0
       '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       '@opentelemetry/api': 1.9.0
       '@scure/base': 1.2.1
-      cojson-core-napi: 0.18.22
-      cojson-core-wasm: 0.18.22
+      cojson-core-napi: 0.18.26
+      cojson-core-wasm: 0.18.26
       neverthrow: 7.2.0
       unicode-segmenter: 0.12.0
 
@@ -1876,6 +1925,10 @@ snapshots:
 
   gensync@1.0.0-beta.2: {}
 
+  get-tsconfig@4.12.0:
+    dependencies:
+      resolve-pkg-maps: 1.0.0
+
   globals@15.15.0: {}
 
   goober@2.1.18(csstype@3.1.3):
@@ -1884,16 +1937,16 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  jazz-tools@0.18.22(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  jazz-tools@0.18.26(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@manuscripts/prosemirror-recreate-steps': 0.1.4
       '@scure/base': 1.2.1
       '@scure/bip39': 1.6.0
       '@tiptap/core': 2.26.2(@tiptap/pm@2.26.2)
       clsx: 2.1.1
-      cojson: 0.18.22
-      cojson-storage-indexeddb: 0.18.22
-      cojson-transport-ws: 0.18.22
+      cojson: 0.18.26
+      cojson-storage-indexeddb: 0.18.26
+      cojson-transport-ws: 0.18.26
       fast-myers-diff: 3.2.0
       goober: 2.1.18(csstype@3.1.3)
       prosemirror-example-setup: 1.2.3
@@ -1993,6 +2046,8 @@ snapshots:
     dependencies:
       minipass: 7.1.2
 
+  mprocs@0.7.3: {}
+
   ms@2.1.3: {}
 
   nanoid@3.3.11: {}
@@ -2056,6 +2111,13 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.41.2
 
+  prosemirror-gapcursor@1.4.0:
+    dependencies:
+      prosemirror-keymap: 1.2.3
+      prosemirror-model: 1.25.3
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.41.3
+
   prosemirror-history@1.4.1:
     dependencies:
       prosemirror-state: 1.4.3
@@ -2064,6 +2126,11 @@ snapshots:
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.5.0:
+    dependencies:
+      prosemirror-state: 1.4.3
+      prosemirror-transform: 1.10.4
+
+  prosemirror-inputrules@1.5.1:
     dependencies:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.4
@@ -2112,21 +2179,27 @@ snapshots:
       prosemirror-model: 1.25.3
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.4
-      prosemirror-view: 1.41.2
+      prosemirror-view: 1.41.3
 
-  prosemirror-trailing-node@3.0.0(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.2):
+  prosemirror-trailing-node@3.0.0(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3):
     dependencies:
       '@remirror/core-constants': 3.0.0
       escape-string-regexp: 4.0.0
       prosemirror-model: 1.25.3
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.41.2
+      prosemirror-view: 1.41.3
 
   prosemirror-transform@1.10.4:
     dependencies:
       prosemirror-model: 1.25.3
 
   prosemirror-view@1.41.2:
+    dependencies:
+      prosemirror-model: 1.25.3
+      prosemirror-state: 1.4.3
+      prosemirror-transform: 1.10.4
+
+  prosemirror-view@1.41.3:
     dependencies:
       prosemirror-model: 1.25.3
       prosemirror-state: 1.4.3
@@ -2142,6 +2215,8 @@ snapshots:
   react-refresh@0.17.0: {}
 
   react@19.1.0: {}
+
+  resolve-pkg-maps@1.0.0: {}
 
   rfc6902@3.1.1: {}
 
@@ -2198,9 +2273,18 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
 
+  tsx@4.20.6:
+    dependencies:
+      esbuild: 0.25.10
+      get-tsconfig: 4.12.0
+    optionalDependencies:
+      fsevents: 2.3.3
+
   typescript@5.6.2: {}
 
   uc.micro@2.1.0: {}
+
+  undici-types@7.14.0: {}
 
   unicode-segmenter@0.12.0: {}
 
@@ -2214,7 +2298,7 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  vite@6.3.5(jiti@2.6.1)(lightningcss@1.30.1):
+  vite@6.3.5(@types/node@24.7.2)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.6)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.10
       fdir: 6.5.0(picomatch@4.0.3)
@@ -2223,14 +2307,20 @@ snapshots:
       rollup: 4.52.4
       tinyglobby: 0.2.15
     optionalDependencies:
+      '@types/node': 24.7.2
       fsevents: 2.3.3
       jiti: 2.6.1
       lightningcss: 1.30.1
+      tsx: 4.20.6
+      yaml: 2.8.1
 
   w3c-keyname@2.2.8: {}
 
   yallist@3.1.1: {}
 
   yallist@5.0.0: {}
+
+  yaml@2.8.1:
+    optional: true
 
   zod@4.1.11: {}

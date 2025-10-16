@@ -1,10 +1,64 @@
-import { co } from "jazz-tools";
+import { co, z } from "jazz-tools";
 
-export const JazzProfile = co.profile({
-  image: co.optional(co.image()),
+/**
+ * Account schemas
+ */
+
+export const AccountPublicData = co.profile({
+  image: co.image().optional(),
+  friends: co.group(),
+  friendRequests: co.list(
+    co.map({
+      from: co.account(),
+      isDeleted: z.boolean().optional(),
+    })
+  ),
 });
 
-export const JazzAccount = co.account({
-  profile: JazzProfile,
-  root: co.map({}),
+export const AccountPrivateData = co.map({});
+
+export const Account = co
+  .account({
+    profile: AccountPublicData,
+    root: AccountPrivateData,
+  })
+  .withMigration((account) => {
+    if (account.profile && !account.profile.$jazz.has("friends")) {
+      console.log("migrating friends");
+      account.profile.$jazz.set(
+        "friends",
+        AccountPublicData.shape.friends.create()
+      );
+    }
+
+    if (account.profile && !account.profile.$jazz.has("friendRequests")) {
+      console.log("migrating friend requests");
+      const group = co.group().create();
+      group.addMember("everyone", "writeOnly");
+      account.profile.$jazz.set(
+        "friendRequests",
+        AccountPublicData.shape.friendRequests.create([], group)
+      );
+    }
+
+    // if (!account.$jazz.has("root")) {
+    //   account.$jazz.set("root", {
+    //     friends: AccountPrivateData.shape.friends.create(),
+    //     friendRequests: AccountPrivateData.shape.friendRequests.create(
+    //       [],
+    //       createEveryoneGroup("writeOnly")
+    //     ),
+    //   });
+    // }
+  });
+
+/**
+ * Photo schemas
+ */
+
+export const Photo = co.map({
+  image: co.image(),
+  caption: z.string().optional(),
 });
+
+export const PhotoFeed = co.feed(Photo);

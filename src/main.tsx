@@ -5,7 +5,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { apiKey } from "./apiKey.ts";
-import { JazzAccount } from "./schema.ts";
+import { Account } from "./schema.ts";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -13,10 +13,10 @@ createRoot(document.getElementById("root")!).render(
       sync={{
         peer: `wss://cloud.jazz.tools/?key=${apiKey}`,
       }}
-      AccountSchema={JazzAccount}
+      AccountSchema={Account}
     >
       <App />
       <JazzInspector />
     </JazzReactProvider>
-  </StrictMode>,
+  </StrictMode>
 );
