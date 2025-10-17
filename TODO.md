@@ -1,0 +1,5 @@
+- Add routing via Nitro (https://v3.nitro.build/docs/routing)
+- Split out pages (global feed, profile, single post, settings, new post)
+- Auth with passkey
+  - add email for backup/recovery
+- Deploy somewhere
