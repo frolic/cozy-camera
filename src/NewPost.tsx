@@ -2,9 +2,8 @@ import { createImage } from "jazz-tools/media";
 import { useAccount } from "jazz-tools/react";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Account, Photo, PhotoFeed } from "./schema";
-import { co } from "jazz-tools";
 
-export default function ImageUpload() {
+export function NewPost() {
   const { me } = useAccount(Account, {
     resolve: { profile: { friends: true } },
   });
@@ -28,50 +27,6 @@ export default function ImageUpload() {
       }
     };
   }, [imagePreviewUrl]);
-
-  const onImageChange = async (event: ChangeEvent<HTMLInputElement>) => {
-    if (!me) return;
-
-    const file = event.currentTarget.files?.[0];
-
-    if (file) {
-      const objectUrl = URL.createObjectURL(file);
-      setImagePreviewUrl(objectUrl);
-
-      try {
-        const feed = await PhotoFeed.load(
-          import.meta.env.VITE_GLOBAL_PHOTO_FEED
-        );
-        if (!feed) throw new Error("could not load global photo feed");
-
-        const startTime = performance.now();
-
-        // create a public post
-        // const owner = co.group().create();
-        // owner.makePublic();
-
-        // create a friends-only post
-        const owner = me.profile.friends;
-
-        const image = await createImage(file, {
-          owner,
-          progressive: true,
-          placeholder: "blur",
-        });
-
-        const photo = Photo.create({ image }, image.$jazz.owner);
-        feed.$jazz.push(photo);
-
-        const endTime = performance.now();
-        console.log(`Image upload took ${endTime - startTime} milliseconds`);
-      } catch (error) {
-        console.error("Error uploading image:", error);
-      } finally {
-        URL.revokeObjectURL(objectUrl);
-        setImagePreviewUrl(null);
-      }
-    }
-  };
 
   if (imagePreviewUrl) {
     return (
@@ -102,7 +57,51 @@ export default function ImageUpload() {
         ref={inputRef}
         type="file"
         accept="image/png, image/jpeg, image/gif, image/bmp"
-        onChange={onImageChange}
+        onChange={async (event: ChangeEvent<HTMLInputElement>) => {
+          if (!me) return;
+
+          const file = event.currentTarget.files?.[0];
+
+          if (file) {
+            const objectUrl = URL.createObjectURL(file);
+            setImagePreviewUrl(objectUrl);
+
+            try {
+              const feed = await PhotoFeed.load(
+                import.meta.env.VITE_GLOBAL_PHOTO_FEED
+              );
+              if (!feed) throw new Error("could not load global photo feed");
+
+              const startTime = performance.now();
+
+              // create a public post
+              // const owner = co.group().create();
+              // owner.makePublic();
+
+              // create a friends-only post
+              const owner = me.profile.friends;
+
+              const image = await createImage(file, {
+                owner,
+                progressive: true,
+                placeholder: "blur",
+              });
+
+              const photo = Photo.create({ image }, image.$jazz.owner);
+              feed.$jazz.push(photo);
+
+              const endTime = performance.now();
+              console.log(
+                `Image upload took ${endTime - startTime} milliseconds`
+              );
+            } catch (error) {
+              console.error("Error uploading image:", error);
+            } finally {
+              URL.revokeObjectURL(objectUrl);
+              setImagePreviewUrl(null);
+            }
+          }
+        }}
         hidden
       />
     </div>

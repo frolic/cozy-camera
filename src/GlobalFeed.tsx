@@ -13,7 +13,7 @@ export default function GlobalFeed() {
     .toSorted((a, b) => b.madeAt.getTime() - a.madeAt.getTime());
 
   return (
-    <div className="space-y-4 px-2">
+    <div className="space-y-4 py-4">
       {photos.map((photo) => (
         <div key={photo.ref.id} data-jazz-id={photo.ref.id}>
           {photo.by ? (
