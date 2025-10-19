@@ -36,6 +36,8 @@ export function ButtonBase({
     <button
       type={type ?? "button"}
       aria-busy={isPending ?? isFormPending ?? props["aria-busy"]}
+      data-is-pending={isPending}
+      data-is-form-pending={isFormPending}
       onClick={onClick ? asyncOnClick : undefined}
       // for submit buttons, listen for form's aria-busy
       ref={(button) => {
@@ -43,18 +45,23 @@ export function ButtonBase({
         const form = button.form;
         if (!form) return;
 
-        const observer = new MutationObserver(() => {
+        function update() {
+          if (!form) return;
           setIsFormPending(
             form.getAttribute("aria-busy") === "true" ? true : undefined
           );
-        });
+        }
 
+        update();
+
+        const observer = new MutationObserver(update);
         observer.observe(form, {
           attributes: true,
           attributeFilter: ["aria-busy"],
         });
-
-        return () => observer.disconnect();
+        return () => {
+          observer.disconnect();
+        };
       }}
       {...props}
     />

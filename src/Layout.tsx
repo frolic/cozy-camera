@@ -1,14 +1,34 @@
-import { ReactNode } from "react";
-import { Link } from "react-router";
+import { ReactNode, useId } from "react";
+import { Link, useNavigate } from "react-router";
 
 export function Layout({ children }: { children: ReactNode }) {
+  const inputId = useId();
+  const navigate = useNavigate();
   return (
     <div className="max-w-xl mx-auto px-2 h-full grid grid-rows-[1fr_auto]">
       <div>{children}</div>
       <div className="sticky bottom-0 p-2 -mx-2 bg-white border-t border-black/10 grid grid-cols-[1fr_auto_1fr] items-center *:flex">
-        <div className="font-black">dear.you</div>
+        <div className="font-black">
+          <Link to="/">dear.you</Link>
+        </div>
         <div>
-          <Link to="/new">
+          <input
+            id={inputId}
+            hidden
+            type="file"
+            accept="image/png, image/jpeg, image/gif, image/bmp"
+            multiple
+            onChange={(event) => {
+              const uploads = Array.from(event.currentTarget.files ?? []);
+              // clear input so picking the same file can trigger onChange again
+              event.currentTarget.value = "";
+
+              if (uploads.length) {
+                navigate("/new", { state: { uploads } });
+              }
+            }}
+          />
+          <label htmlFor={inputId} className="cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -21,7 +41,7 @@ export function Layout({ children }: { children: ReactNode }) {
                 clipRule="evenodd"
               />
             </svg>
-          </Link>
+          </label>
         </div>
         <div className="justify-self-end">
           <Link to="/settings">

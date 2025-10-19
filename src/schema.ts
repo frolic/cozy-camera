@@ -53,12 +53,12 @@ export const Account = co
   });
 
 /**
- * Photo schemas
+ * Post schemas
  */
 
-export const Photo = co.map({
-  image: co.image(),
+export const Post = co.map({
+  images: co.list(co.image()),
   caption: z.string().optional(),
 });
 
-export const PhotoFeed = co.feed(Photo);
+export const PostFeed = co.feed(Post);

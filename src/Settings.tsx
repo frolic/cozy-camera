@@ -1,18 +1,15 @@
-import { useAccount, usePasskeyAuth } from "jazz-tools/react";
+import { useAccount } from "jazz-tools/react";
 import { Account } from "./schema";
 import { UserLabel } from "./UserLabel";
 import { removeFriend } from "./friends/removeFriend";
 import { acceptFriend } from "./friends/acceptFriend";
 import { Layout } from "./Layout";
-import { appName } from "./common";
 import { Button } from "./ui/Button";
-import { useJazzContextManager } from "jazz-tools/react-core";
+import { useNavigate } from "react-router";
 
 export function Settings() {
-  const auth = usePasskeyAuth({ appName });
-  const jazzContext = useJazzContextManager();
-
-  const { me } = useAccount(Account, {
+  const navigate = useNavigate();
+  const { me, logOut } = useAccount(Account, {
     resolve: {
       profile: {
         friends: true,
@@ -107,8 +104,10 @@ export function Settings() {
           </ul>
         </div>
         <Button
-          // TODO: replace with auth.logOut() once available
-          onClick={() => jazzContext.logOut()}
+          onClick={() => {
+            logOut();
+            navigate("/");
+          }}
         >
           Sign out
         </Button>

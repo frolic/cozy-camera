@@ -8,7 +8,7 @@ import { apiKey } from "./common.ts";
 import { Account } from "./schema.ts";
 import { Home } from "./Home.tsx";
 import { Settings } from "./Settings.tsx";
-import { NewPost } from "./NewPost.tsx";
+import { NewPostPage } from "./new-post/NewPostPage.tsx";
 import { Authenticated } from "./Authenticated.tsx";
 
 createRoot(document.getElementById("root")!).render(
@@ -34,7 +34,7 @@ createRoot(document.getElementById("root")!).render(
             path="/new"
             Component={() => (
               <Authenticated>
-                <NewPost />
+                <NewPostPage />
               </Authenticated>
             )}
           />

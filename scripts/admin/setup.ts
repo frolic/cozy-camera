@@ -1,6 +1,6 @@
 import { startWorker } from "jazz-tools/worker";
 import { co } from "jazz-tools";
-import { PhotoFeed } from "../../src/schema";
+import { PostFeed } from "../../src/schema";
 
 const { shutdownWorker } = await startWorker({
   accountID: process.env.VITE_JAZZ_ADMIN_ACCOUNT,
@@ -12,17 +12,17 @@ if (!admin) {
   throw new Error("No admin account found. Did you run `pnpm admin:init`?");
 }
 
-const globalPhotoFeed = (() => {
+const globalPostFeed = (() => {
   const owner = co.group().create();
   // cofeeds are append-only so `writer` allows us to read/write but doesn't allow
   // users to overwrite data from others
   owner.addMember("everyone", "writer");
-  const feed = PhotoFeed.create([], owner);
+  const feed = PostFeed.create([], owner);
   return feed;
 })();
 
 await shutdownWorker();
 
 console.log(`
-VITE_GLOBAL_PHOTO_FEED=${globalPhotoFeed.$jazz.id}
+VITE_GLOBAL_POST_FEED=${globalPostFeed.$jazz.id}
 `);

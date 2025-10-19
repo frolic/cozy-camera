@@ -9,9 +9,9 @@ export function Button({
   return (
     <ButtonBase
       className={twMerge(
-        "rounded bg-indigo-500 text-white p-2 leading-none cursor-pointer",
+        "rounded bg-indigo-500 hover:brightness-125 active:brightness-90 text-white p-2 leading-none cursor-pointer",
         // TODO: improve pending
-        "aria-busy:bg-neutral-400 aria-busy:animate-pulse",
+        "aria-busy:saturate-50 aria-busy:animate-pulse",
         className
       )}
       {...props}

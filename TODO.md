@@ -1,7 +1,6 @@
 - Add page to view photo
 - Add photo likes/comments?
 - Add email for account recovery
-- Improve "new post" page, add caption, multiple photos
 - Deploy somewhere
 - Improve images (store original but split out the one to display in feed, something like max size 4in at 300 dpi and cropped/resized to max 3in x 4in)
 - Design pass

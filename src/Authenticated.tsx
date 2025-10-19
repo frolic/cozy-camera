@@ -4,6 +4,7 @@ import { appName } from "./common";
 import { Button } from "./ui/Button";
 import { Form } from "./ui/Form";
 import { useId } from "react";
+import { Input } from "./ui/Input";
 
 export function Authenticated({ children }: { children: React.ReactNode }) {
   const auth = usePasskeyAuth({ appName });
@@ -18,7 +19,7 @@ export function Authenticated({ children }: { children: React.ReactNode }) {
   return (
     <Layout>
       <div className="h-full flex flex-col items-center justify-center">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 py-4">
           <Button onClick={() => auth.logIn()}>Sign in</Button>
           <span className="text-center italic text-neutral-500">or</span>
           <Form
@@ -31,12 +32,7 @@ export function Authenticated({ children }: { children: React.ReactNode }) {
           >
             <div className="flex flex-col">
               <label htmlFor={ids.name}>Your name</label>
-              <input
-                id={ids.name}
-                name="name"
-                required
-                className="rounded leading-7 px-2 border-2 border-neutral-300"
-              />
+              <Input id={ids.name} name="name" required />
             </div>
             <Button type="submit">Create account</Button>
           </Form>
