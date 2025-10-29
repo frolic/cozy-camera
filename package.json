@@ -1,5 +1,5 @@
 {
-  "name": "image-upload-app",
+  "name": "cozy-camera",
   "private": true,
   "type": "module",
   "scripts": {
