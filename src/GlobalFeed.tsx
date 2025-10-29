@@ -16,10 +16,14 @@ export default function GlobalFeed() {
     <div className="space-y-4 py-4">
       {posts.map((post) =>
         post.value ? (
-          <div key={post.ref.id} data-jazz-id={post.ref.id}>
+          <div
+            key={post.ref.id}
+            data-post-id={post.ref.id}
+            className="bg-white p-2 shadow"
+          >
             {post.value.images?.map((image) =>
               image ? (
-                <div key={image.$jazz.id} className="-mx-2">
+                <div key={image.$jazz.id}>
                   <Image
                     imageId={image.$jazz.id}
                     loading="lazy"
@@ -29,16 +33,18 @@ export default function GlobalFeed() {
               ) : null
             )}
 
-            <div>
-              {post.by ? (
-                <>
-                  <UserLabel user={post.by} />{" "}
-                </>
-              ) : null}
-              {post.value.caption}
-            </div>
-            <div className="text-xs text-neutral-500">
-              <RelativeTime time={post.madeAt} />
+            <div className="p-2">
+              <div>
+                {post.by ? (
+                  <>
+                    <UserLabel user={post.by} />{" "}
+                  </>
+                ) : null}
+                {post.value.caption}
+              </div>
+              <div className="text-xs text-neutral-500">
+                <RelativeTime time={post.madeAt} />
+              </div>
             </div>
           </div>
         ) : null

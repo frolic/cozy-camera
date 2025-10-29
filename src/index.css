@@ -3,6 +3,7 @@
 body {
   min-height: 100vh;
   height: 0;
+  @apply bg-stone-100;
 }
 #root {
   height: 100%;
