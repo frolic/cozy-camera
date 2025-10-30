@@ -27,7 +27,7 @@ export function Settings() {
 
   return (
     <Layout>
-      <div className="space-y-4 py-4">
+      <div className="border-t border-stone-200 space-y-4 py-4">
         <h1>Settings</h1>
         <div>
           Account: {me.profile.name}{" "}

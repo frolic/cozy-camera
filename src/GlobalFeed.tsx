@@ -13,7 +13,7 @@ export default function GlobalFeed() {
     .toSorted((a, b) => b.madeAt.getTime() - a.madeAt.getTime());
 
   return (
-    <div className="space-y-4 py-4">
+    <div className="-mx-3 space-y-4">
       {posts.map((post) =>
         post.value ? (
           <div
@@ -33,7 +33,7 @@ export default function GlobalFeed() {
               ) : null
             )}
 
-            <div className="p-2">
+            <div className="p-1">
               <div>
                 {post.by ? (
                   <>
@@ -49,6 +49,9 @@ export default function GlobalFeed() {
           </div>
         ) : null
       )}
+      <div className="py-24 text-center text-sm italic text-stone-400">
+        take a breath, relax your shoulders
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export function Authenticated({ children }: { children: React.ReactNode }) {
 
   return (
     <Layout>
-      <div className="h-full flex flex-col items-center justify-center">
+      <div className="border-t border-stone-200 h-full flex flex-col items-center justify-center">
         <div className="flex flex-col gap-4 py-4">
           <Button onClick={() => auth.logIn()}>Sign in</Button>
           <span className="text-center italic text-neutral-500">or</span>

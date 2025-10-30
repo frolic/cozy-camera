@@ -1,4 +1,4 @@
-import "./index.css";
+import "./root.css";
 import { JazzInspector } from "jazz-tools/inspector";
 import { JazzReactProvider } from "jazz-tools/react";
 import { StrictMode } from "react";

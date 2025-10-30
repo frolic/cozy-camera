@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  @apply bg-stone-100 text-black/70;
+}
+#root {
+  min-height: 100%;
+  height: 0;
+}
