@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       jazz-tools:
-        specifier: ^0.18.26
-        version: 0.18.26(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.18.33
+        version: 0.18.33(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -706,63 +706,63 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  cojson-core-napi-darwin-arm64@0.18.26:
-    resolution: {integrity: sha512-ICg2CcfmXQwEyzyJF7Fi0jFob3H8dVgTGCJ84bHAQ8bD9miK25A/oKXpMq5NxJReiAVIiY3CNsc2k1ce4Bo32w==}
+  cojson-core-napi-darwin-arm64@0.18.33:
+    resolution: {integrity: sha512-XIAx+WHhiSmvcQwTd5uxassJA+e2mBlvQ+wXImnHa901QLztpyoU6xsiJyfHgZeix56HQuipQMPWVfSXNkO2qQ==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm64]
     os: [darwin]
 
-  cojson-core-napi-darwin-x64@0.18.26:
-    resolution: {integrity: sha512-Koltq2za3shYqnn25Sw9oj6TYZ/jEt6v+4bbbp4CyU+N7z5vTaQzPaqu/pE0R2oX09UgVHz/pDLnhnnMGIDhKA==}
+  cojson-core-napi-darwin-x64@0.18.33:
+    resolution: {integrity: sha512-tbp0LN4TzDR/OWwl+LH3SO4VuHqrEOebbvaRDBcBAatWM+tBVu63wqpWqEGAPi1HSaCHFVsiJtXeR2P+ELAJgQ==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [x64]
     os: [darwin]
 
-  cojson-core-napi-linux-arm-gnueabihf@0.18.26:
-    resolution: {integrity: sha512-RLL0t/Qb4GIvznv57a5ukLoPr5sNL0iLsX3mIpxE9F+zOK2PJ73HpZrihs8TmjbWgbpkdPhejgtW/0Y3r8je7A==}
+  cojson-core-napi-linux-arm-gnueabihf@0.18.33:
+    resolution: {integrity: sha512-5PA8wz9JSA7pbu5drjB1q2uiCkFG4RzFa4K1KN6KtHHfW+XJ2xnf28AoUsW5uQtRkc86S3rh9VgBmWyZJgsrKg==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm]
     os: [linux]
 
-  cojson-core-napi-linux-arm64-gnu@0.18.26:
-    resolution: {integrity: sha512-rK5iVkJEbsX9rA+90W+9VA0ReAEccYcTHTTfW6dxkGXW/1OlmeYo3g+nXXzJdVBwI38TVA6w6F5g2Tl/yLRjfw==}
+  cojson-core-napi-linux-arm64-gnu@0.18.33:
+    resolution: {integrity: sha512-3hJtIY4bj15gQ/0/czUnAUmw42+UXZicIjuhbm/N+Cnu0jQlWUZh2VJAqjPH9qFB0o79wpyYSt5BXZs1/wiu/w==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm64]
     os: [linux]
 
-  cojson-core-napi-linux-arm64-musl@0.18.26:
-    resolution: {integrity: sha512-Qrmw6alEPX2Pika8cLC/KjKSY+7E2aRNRh9KFqavcmhrILKPNuaznP7gp6yHJ+XRqVmYSqeE0e0sm9Cxwz7U4Q==}
+  cojson-core-napi-linux-arm64-musl@0.18.33:
+    resolution: {integrity: sha512-Fyhk6RU4M2fLh7FgBQlcDsynj9ufd40T6QLU14iKFKhHpdje2AeI6bVybYLIjRyOXK1uSKzy7VphA/Wrm5VUbw==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [arm64]
     os: [linux]
 
-  cojson-core-napi-linux-x64-gnu@0.18.26:
-    resolution: {integrity: sha512-cfq3SVOCJLPf/wbyg8on9MCLz01KRvzWSHyzIw8WEWg6/JjhVjC9jjgkjr9mDicUHNCOUr0idXGtH3GApDyAzg==}
+  cojson-core-napi-linux-x64-gnu@0.18.33:
+    resolution: {integrity: sha512-jQBxcqo78fK4fknvGcr0XWS/X7uuecWRrwvPrQll6mr6fI6Paxz7jK4V7kBbJqoWFNYxn1bsOTNxyiPRDY9xBw==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [x64]
     os: [linux]
 
-  cojson-core-napi-linux-x64-musl@0.18.26:
-    resolution: {integrity: sha512-0LG+DHJjKNMTkeoB82TTk75qT6Oo2gvSyl6xmp+ggDLXH/LLdgrNJUYYn3ury/p94Sc90ZbsLmxukK5toecUGA==}
+  cojson-core-napi-linux-x64-musl@0.18.33:
+    resolution: {integrity: sha512-ocgfvEiL4f7zQAhSqnicfSSr7Gsk/TGjfL0N2mRtn2T0topC/juhzidgAeWbVsBdqkBwuzPj44DsBQ0DgBj5NA==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
     cpu: [x64]
     os: [linux]
 
-  cojson-core-napi@0.18.26:
-    resolution: {integrity: sha512-FSyBsu4t/iHhSsV9ZO19qvvrla3qgPcyqvzmnIgePLoYg3fFZ4y18E24Aq+10UH4cl5I9uZMtefwTIfYwV8ivA==}
+  cojson-core-napi@0.18.33:
+    resolution: {integrity: sha512-USE1kY45N6qm3lSqdTTEf9N86vlnx4QtjKtMoCtEK0G6nussXRDBNi+EPKmSjmdZuiKRP8E9BKgAxhLYbqqEqg==}
     engines: {node: '>= 12.22.0 < 13 || >= 14.17.0 < 15 || >= 15.12.0 < 16 || >= 16.0.0'}
 
-  cojson-core-wasm@0.18.26:
-    resolution: {integrity: sha512-wb1DJPQVTAXvJEjoNVyPl8PhEwYmHDg86QJApGUprw+tgXCTl9vMCKZuAeC0KK5WoEnOcwzPNxMKKCdnepAfpg==}
+  cojson-core-wasm@0.18.33:
+    resolution: {integrity: sha512-OzAcA/YgjdjooN1cCB81KyIfFL3XydY8iuzKFzWQkVK5qFLnkjdsP2kFAnLiGlZcYcoud6klLLIFqVk2hsIlRg==}
 
-  cojson-storage-indexeddb@0.18.26:
-    resolution: {integrity: sha512-JlzDSsNDkQ8fAYV39JNe3BpbpFuQiI82G6lIG8D7iPpJPJ+r8x32B3otYQVuebahQq5t5r7nVlzoOwq8s536eA==}
+  cojson-storage-indexeddb@0.18.33:
+    resolution: {integrity: sha512-4zaNU8+Gwweeqx3MBxZwZjBZN68+RRnauf9FYYDzt3Otx2Xf3ihNl5Ppl0bxpcfF8SioxvPcTx7aYNQdDn30cg==}
 
-  cojson-transport-ws@0.18.26:
-    resolution: {integrity: sha512-yNoJSBfKlNVqjIN2L/RF8M+r34Lg3WvjEgjHxab335zKR0I5LQJoJ6wYIfa+F5esR5SckDetIBiyySGstY5m2Q==}
+  cojson-transport-ws@0.18.33:
+    resolution: {integrity: sha512-2X8bYHZdgSap2HD6mhyBuw8GXiqTuIdbY5WCZUoglmhTlDWvb6vNdOKasOm3cV8wMBzmwFdned72tx3ZITYW7g==}
 
-  cojson@0.18.26:
-    resolution: {integrity: sha512-1A2OD7manJg9lAK0edOQtIxtO7AJWj/HCfZejUZ7oJtjhTAQb0JKwqEV4cMFQqe3gi6Wc3VELHZomNIzcAqXsQ==}
+  cojson@0.18.33:
+    resolution: {integrity: sha512-lboHOGsjFDpUNvjh1bOsX+hndeBocS1tsxGDuw6ufQQTixQEo/zM/nNn0VVj6fN9v5QUxcDVczkBMWM9kskcvA==}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -854,14 +854,15 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  jazz-tools@0.18.26:
-    resolution: {integrity: sha512-o89Ncdx1cCo123OWKCVzVO5YXu6ECPl5eNPBPrJvHL8HtkgSNuF+QUJGrCj3rmFT1qny6JHsozErSwFL3JUrqw==}
+  jazz-tools@0.18.33:
+    resolution: {integrity: sha512-J0UJixwuEi86rP2xZksFoGE8GFn9nAhSdC3bnnDFhUiz1sdE5VrX6xwieHohmOXBAlLe1A7EG8MDbv0yUuEHZw==}
     peerDependencies:
       '@bam.tech/react-native-image-resizer': '*'
       '@op-engineering/op-sqlite': '*'
       '@react-native-community/netinfo': '*'
       better-auth: ^1.3.2
       expo-file-system: '*'
+      expo-image-manipulator: '*'
       expo-secure-store: '*'
       expo-sqlite: '*'
       react: '*'
@@ -883,6 +884,8 @@ packages:
       better-auth:
         optional: true
       expo-file-system:
+        optional: true
+      expo-image-manipulator:
         optional: true
       expo-secure-store:
         optional: true
@@ -1091,6 +1094,9 @@ packages:
   prosemirror-model@1.25.3:
     resolution: {integrity: sha512-dY2HdaNXlARknJbrManZ1WyUtos+AP97AmvqdOQtWtrrC5g4mohVX5DTi9rXNFSk09eczLq9GuNTtq3EfMeMGA==}
 
+  prosemirror-model@1.25.4:
+    resolution: {integrity: sha512-PIM7E43PBxKce8OQeezAs9j4TP+5yDpZVbuurd1h5phUxEKIu+G2a+EUZzIC5nS1mJktDJWzbqS23n1tsAf5QA==}
+
   prosemirror-schema-basic@1.2.4:
     resolution: {integrity: sha512-ELxP4TlX3yr2v5rM7Sb70SqStq5NvI15c0j9j/gjsrO5vaw+fnnpovCLEGIcpeGfifkuqJwl4fon6b+KdrODYQ==}
 
@@ -1099,6 +1105,9 @@ packages:
 
   prosemirror-state@1.4.3:
     resolution: {integrity: sha512-goFKORVbvPuAQaXhpbemJFRKJ2aixr+AZMGiquiqKxaucC6hlpHNZHWgz5R7dS4roHiwq9vDctE//CZ++o0W1Q==}
+
+  prosemirror-state@1.4.4:
+    resolution: {integrity: sha512-6jiYHH2CIGbCfnxdHbXZ12gySFY/fz/ulZE333G6bPqIZ4F+TXo9ifiR86nAHpWnfoNjOb3o5ESi7J8Uz1jXHw==}
 
   prosemirror-tables@1.8.1:
     resolution: {integrity: sha512-DAgDoUYHCcc6tOGpLVPSU1k84kCUWTWnfWX3UDy2Delv4ryH0KqTD6RBI6k4yi9j9I8gl3j8MkPpRD/vWPZbug==}
@@ -1727,12 +1736,12 @@ snapshots:
       prosemirror-keymap: 1.2.3
       prosemirror-markdown: 1.13.2
       prosemirror-menu: 1.2.5
-      prosemirror-model: 1.25.3
+      prosemirror-model: 1.25.4
       prosemirror-schema-basic: 1.2.4
       prosemirror-schema-list: 1.5.1
-      prosemirror-state: 1.4.3
+      prosemirror-state: 1.4.4
       prosemirror-tables: 1.8.1
-      prosemirror-trailing-node: 3.0.0(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3)
+      prosemirror-trailing-node: 3.0.0(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3)
       prosemirror-transform: 1.10.4
       prosemirror-view: 1.41.3
 
@@ -1830,57 +1839,57 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  cojson-core-napi-darwin-arm64@0.18.26:
+  cojson-core-napi-darwin-arm64@0.18.33:
     optional: true
 
-  cojson-core-napi-darwin-x64@0.18.26:
+  cojson-core-napi-darwin-x64@0.18.33:
     optional: true
 
-  cojson-core-napi-linux-arm-gnueabihf@0.18.26:
+  cojson-core-napi-linux-arm-gnueabihf@0.18.33:
     optional: true
 
-  cojson-core-napi-linux-arm64-gnu@0.18.26:
+  cojson-core-napi-linux-arm64-gnu@0.18.33:
     optional: true
 
-  cojson-core-napi-linux-arm64-musl@0.18.26:
+  cojson-core-napi-linux-arm64-musl@0.18.33:
     optional: true
 
-  cojson-core-napi-linux-x64-gnu@0.18.26:
+  cojson-core-napi-linux-x64-gnu@0.18.33:
     optional: true
 
-  cojson-core-napi-linux-x64-musl@0.18.26:
+  cojson-core-napi-linux-x64-musl@0.18.33:
     optional: true
 
-  cojson-core-napi@0.18.26:
+  cojson-core-napi@0.18.33:
     optionalDependencies:
-      cojson-core-napi-darwin-arm64: 0.18.26
-      cojson-core-napi-darwin-x64: 0.18.26
-      cojson-core-napi-linux-arm-gnueabihf: 0.18.26
-      cojson-core-napi-linux-arm64-gnu: 0.18.26
-      cojson-core-napi-linux-arm64-musl: 0.18.26
-      cojson-core-napi-linux-x64-gnu: 0.18.26
-      cojson-core-napi-linux-x64-musl: 0.18.26
+      cojson-core-napi-darwin-arm64: 0.18.33
+      cojson-core-napi-darwin-x64: 0.18.33
+      cojson-core-napi-linux-arm-gnueabihf: 0.18.33
+      cojson-core-napi-linux-arm64-gnu: 0.18.33
+      cojson-core-napi-linux-arm64-musl: 0.18.33
+      cojson-core-napi-linux-x64-gnu: 0.18.33
+      cojson-core-napi-linux-x64-musl: 0.18.33
 
-  cojson-core-wasm@0.18.26: {}
+  cojson-core-wasm@0.18.33: {}
 
-  cojson-storage-indexeddb@0.18.26:
+  cojson-storage-indexeddb@0.18.33:
     dependencies:
-      cojson: 0.18.26
+      cojson: 0.18.33
 
-  cojson-transport-ws@0.18.26:
+  cojson-transport-ws@0.18.33:
     dependencies:
       '@opentelemetry/api': 1.9.0
-      cojson: 0.18.26
+      cojson: 0.18.33
 
-  cojson@0.18.26:
+  cojson@0.18.33:
     dependencies:
       '@noble/ciphers': 1.3.0
       '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
       '@opentelemetry/api': 1.9.0
       '@scure/base': 1.2.1
-      cojson-core-napi: 0.18.26
-      cojson-core-wasm: 0.18.26
+      cojson-core-napi: 0.18.33
+      cojson-core-wasm: 0.18.33
       neverthrow: 7.2.0
       unicode-segmenter: 0.12.0
 
@@ -1965,16 +1974,16 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  jazz-tools@0.18.26(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  jazz-tools@0.18.33(@tiptap/pm@2.26.2)(csstype@3.1.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@manuscripts/prosemirror-recreate-steps': 0.1.4
       '@scure/base': 1.2.1
       '@scure/bip39': 1.6.0
       '@tiptap/core': 2.26.2(@tiptap/pm@2.26.2)
       clsx: 2.1.1
-      cojson: 0.18.26
-      cojson-storage-indexeddb: 0.18.26
-      cojson-transport-ws: 0.18.26
+      cojson: 0.18.33
+      cojson-storage-indexeddb: 0.18.33
+      cojson-transport-ws: 0.18.33
       fast-myers-diff: 3.2.0
       goober: 2.1.18(csstype@3.1.3)
       prosemirror-example-setup: 1.2.3
@@ -2106,7 +2115,7 @@ snapshots:
 
   prosemirror-collab@1.3.1:
     dependencies:
-      prosemirror-state: 1.4.3
+      prosemirror-state: 1.4.4
 
   prosemirror-commands@1.7.1:
     dependencies:
@@ -2142,8 +2151,8 @@ snapshots:
   prosemirror-gapcursor@1.4.0:
     dependencies:
       prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.3
-      prosemirror-state: 1.4.3
+      prosemirror-model: 1.25.4
+      prosemirror-state: 1.4.4
       prosemirror-view: 1.41.3
 
   prosemirror-history@1.4.1:
@@ -2160,7 +2169,7 @@ snapshots:
 
   prosemirror-inputrules@1.5.1:
     dependencies:
-      prosemirror-state: 1.4.3
+      prosemirror-state: 1.4.4
       prosemirror-transform: 1.10.4
 
   prosemirror-keymap@1.2.3:
@@ -2172,7 +2181,7 @@ snapshots:
     dependencies:
       '@types/markdown-it': 14.1.2
       markdown-it: 14.1.0
-      prosemirror-model: 1.25.3
+      prosemirror-model: 1.25.4
 
   prosemirror-menu@1.2.5:
     dependencies:
@@ -2182,6 +2191,10 @@ snapshots:
       prosemirror-state: 1.4.3
 
   prosemirror-model@1.25.3:
+    dependencies:
+      orderedmap: 2.1.1
+
+  prosemirror-model@1.25.4:
     dependencies:
       orderedmap: 2.1.1
 
@@ -2201,20 +2214,26 @@ snapshots:
       prosemirror-transform: 1.10.4
       prosemirror-view: 1.41.2
 
-  prosemirror-tables@1.8.1:
+  prosemirror-state@1.4.4:
     dependencies:
-      prosemirror-keymap: 1.2.3
-      prosemirror-model: 1.25.3
-      prosemirror-state: 1.4.3
+      prosemirror-model: 1.25.4
       prosemirror-transform: 1.10.4
       prosemirror-view: 1.41.3
 
-  prosemirror-trailing-node@3.0.0(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.41.3):
+  prosemirror-tables@1.8.1:
+    dependencies:
+      prosemirror-keymap: 1.2.3
+      prosemirror-model: 1.25.4
+      prosemirror-state: 1.4.4
+      prosemirror-transform: 1.10.4
+      prosemirror-view: 1.41.3
+
+  prosemirror-trailing-node@3.0.0(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.3):
     dependencies:
       '@remirror/core-constants': 3.0.0
       escape-string-regexp: 4.0.0
-      prosemirror-model: 1.25.3
-      prosemirror-state: 1.4.3
+      prosemirror-model: 1.25.4
+      prosemirror-state: 1.4.4
       prosemirror-view: 1.41.3
 
   prosemirror-transform@1.10.4:
@@ -2229,8 +2248,8 @@ snapshots:
 
   prosemirror-view@1.41.3:
     dependencies:
-      prosemirror-model: 1.25.3
-      prosemirror-state: 1.4.3
+      prosemirror-model: 1.25.4
+      prosemirror-state: 1.4.4
       prosemirror-transform: 1.10.4
 
   punycode.js@2.3.1: {}
