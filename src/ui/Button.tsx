@@ -9,7 +9,12 @@ export function Button({
   return (
     <ButtonBase
       className={twMerge(
-        "rounded bg-indigo-500 hover:brightness-125 active:brightness-90 text-white p-2 leading-none cursor-pointer",
+        "inline-flex",
+        "rounded border-[1.5px] border-transparent",
+        "bg-yellow-600 enabled:hover:brightness-115 enabled:active:brightness-90 text-white",
+        "disabled:bg-stone-200 disabled:text-stone-500 disabled:border-stone-300",
+        "py-2 px-2.5 leading-none",
+        "enabled:cursor-pointer",
         // TODO: improve pending
         "aria-busy:saturate-50 aria-busy:animate-pulse",
         className

@@ -1,19 +1,16 @@
-import { Image, useCoState } from "jazz-tools/react";
-import { PostFeed } from "./schema";
-import { UserLabel } from "./UserLabel";
-import { RelativeTime } from "./RelativeTime";
+import { Image } from "jazz-tools/react";
+import { Post } from "../schema";
+import { UserLabel } from "../UserLabel";
+import { RelativeTime } from "../RelativeTime";
+import { co, CoFeedEntry } from "jazz-tools";
 
-export default function GlobalFeed() {
-  const feed = useCoState(PostFeed, import.meta.env.VITE_GLOBAL_POST_FEED);
-  // TODO: show something else?
-  if (!feed) return;
-
-  const posts = Object.values(feed.perAccount)
-    .flatMap((accountFeed) => Array.from(accountFeed.all))
-    .toSorted((a, b) => b.madeAt.getTime() - a.madeAt.getTime());
-
+export function Posts({
+  posts,
+}: {
+  posts: readonly Omit<CoFeedEntry<co.loaded<typeof Post>>, "all">[];
+}) {
   return (
-    <div className="-mx-3 space-y-4">
+    <>
       {posts.map((post) =>
         post.value ? (
           <div
@@ -33,7 +30,7 @@ export default function GlobalFeed() {
               ) : null
             )}
 
-            <div className="p-1">
+            <div className="p-2">
               <div>
                 {post.by ? (
                   <>
@@ -49,9 +46,6 @@ export default function GlobalFeed() {
           </div>
         ) : null
       )}
-      <div className="py-24 text-center text-sm italic text-stone-400">
-        take a breath, relax your shoulders
-      </div>
-    </div>
+    </>
   );
 }

@@ -4,7 +4,6 @@ import { useId } from "react";
 import { Account, Post, PostFeed } from "../schema";
 import { useLocation, useNavigate, useNavigationType } from "react-router";
 import { isBlobArray } from "./isBlobArray";
-import { Layout } from "../Layout";
 import { ImagePreview } from "./ImagePreview";
 import { Textarea } from "../ui/Textarea";
 import { Button } from "../ui/Button";
@@ -43,81 +42,77 @@ export function NewPostPage() {
   });
 
   return (
-    <Layout>
-      <Form
-        className="flex flex-col gap-4 py-4 pb-16"
-        onSubmit={async (event) => {
-          event.preventDefault();
-          const formData = new FormData(event.currentTarget);
+    <Form
+      className="flex flex-col gap-4 py-4 pb-16"
+      onSubmit={async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.currentTarget);
 
-          if (!me) return;
+        if (!me) return;
 
-          const feed = await PostFeed.load(
-            import.meta.env.VITE_GLOBAL_POST_FEED
-          );
-          if (!feed) throw new Error("could not load global post feed");
+        const feed = await PostFeed.load(import.meta.env.VITE_GLOBAL_POST_FEED);
+        if (!feed) throw new Error("could not load global post feed");
 
-          const owner = co.group().create();
-          const visibility = formData.get("visibility") as string;
-          if (visibility === "public") {
-            owner.addMember("everyone", "reader");
-          } else if (visibility === "friends") {
-            owner.addMember(me.profile.friends, "reader");
-          }
+        const owner = co.group().create();
+        const visibility = formData.get("visibility") as string;
+        if (visibility === "public") {
+          owner.addMember("everyone", "reader");
+        } else if (visibility === "friends") {
+          owner.addMember(me.profile.friends, "reader");
+        }
 
-          const caption = formData.get("caption") as string;
+        const caption = formData.get("caption") as string;
 
-          const images = await Promise.all(
-            uploads.map((upload) => {
-              const startTime = performance.now();
-              const image = createImage(upload, {
-                owner,
-                progressive: true,
-                placeholder: "blur",
-              });
-              const endTime = performance.now();
-              console.log(
-                `Image upload took ${endTime - startTime} milliseconds`
-              );
-              return image;
-            })
-          );
+        const images = await Promise.all(
+          uploads.map((upload) => {
+            const startTime = performance.now();
+            const image = createImage(upload, {
+              owner,
+              progressive: true,
+              placeholder: "blur",
+            });
+            const endTime = performance.now();
+            console.log(
+              `Image upload took ${endTime - startTime} milliseconds`
+            );
+            return image;
+          })
+        );
 
-          const photo = Post.create({ images, caption }, owner);
-          feed.$jazz.push(photo);
+        const photo = Post.create({ images, caption }, owner);
+        feed.$jazz.push(photo);
 
-          navigate("/");
-        }}
-      >
-        <div>
-          {uploads.map((upload, i) => (
-            <ImagePreview key={i} image={upload} />
-          ))}
-        </div>
+        navigate("/");
+      }}
+    >
+      <div>
+        {uploads.map((upload, i) => (
+          <ImagePreview key={i} image={upload} />
+        ))}
+      </div>
 
-        <div className="flex flex-col">
-          <label htmlFor={ids.caption}>Caption</label>
-          <Textarea
-            id={ids.caption}
-            name="caption"
-            className="field-sizing-content min-h-24"
-          />
-        </div>
+      <div className="flex flex-col">
+        <label htmlFor={ids.caption}>Caption</label>
+        <Textarea
+          id={ids.caption}
+          name="caption"
+          className="field-sizing-content min-h-24"
+        />
+      </div>
 
-        <div className="flex flex-col">
-          <label htmlFor={ids.visibility}>Privacy</label>
-          <Select id={ids.visibility} name="visibility" required>
-            <option value="private">Just me</option>
-            <option value="friends">Friends</option>
-            <option value="public">Public</option>
-          </Select>
-        </div>
+      <div className="flex flex-col">
+        <label htmlFor={ids.visibility}>Privacy</label>
+        <Select id={ids.visibility} name="visibility" required>
+          <option value="private">Just me</option>
+          <option value="friends">Friends</option>
+          <option value="public">Public</option>
+        </Select>
+      </div>
 
-        <Button type="submit" className="text-lg">
-          Post
-        </Button>
-      </Form>
-    </Layout>
+      <Button type="submit" className="text-lg">
+        Post
+      </Button>
+    </Form>
   );
 }
 

@@ -1,5 +1,4 @@
 import { usePasskeyAuth } from "jazz-tools/react";
-import { Layout } from "./Layout";
 import { appName } from "./common";
 import { Button } from "./ui/Button";
 import { Form } from "./ui/Form";
@@ -17,27 +16,25 @@ export function Authenticated({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <Layout>
-      <div className="border-t border-stone-200 h-full flex flex-col items-center justify-center">
-        <div className="flex flex-col gap-4 py-4">
-          <Button onClick={() => auth.logIn()}>Sign in</Button>
-          <span className="text-center italic text-neutral-500">or</span>
-          <Form
-            onSubmit={async (event) => {
-              event.preventDefault();
-              const formData = new FormData(event.currentTarget);
-              await auth.signUp(formData.get("name") as string);
-            }}
-            className="flex flex-col gap-2"
-          >
-            <div className="flex flex-col">
-              <label htmlFor={ids.name}>Your name</label>
-              <Input id={ids.name} name="name" required />
-            </div>
-            <Button type="submit">Create account</Button>
-          </Form>
-        </div>
+    <div className="border-t border-stone-200 h-full flex flex-col items-center justify-center">
+      <div className="flex flex-col gap-4 py-4">
+        <Button onClick={() => auth.logIn()}>Sign in</Button>
+        <span className="text-center italic text-neutral-500">or</span>
+        <Form
+          onSubmit={async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.currentTarget);
+            await auth.signUp(formData.get("name") as string);
+          }}
+          className="flex flex-col gap-2"
+        >
+          <div className="flex flex-col">
+            <label htmlFor={ids.name}>Your name</label>
+            <Input id={ids.name} name="name" required />
+          </div>
+          <Button type="submit">Create account</Button>
+        </Form>
       </div>
-    </Layout>
+    </div>
   );
 }
