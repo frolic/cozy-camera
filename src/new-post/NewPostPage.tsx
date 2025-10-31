@@ -1,6 +1,6 @@
 import { createImage } from "jazz-tools/media";
 import { useAccount } from "jazz-tools/react";
-import { useId } from "react";
+import { useEffect, useId } from "react";
 import { Account, Post, PostFeed } from "../schema";
 import { useLocation, useNavigate, useNavigationType } from "react-router";
 import { isBlobArray } from "./isBlobArray";
@@ -10,6 +10,7 @@ import { Button } from "../ui/Button";
 import { Form } from "../ui/Form";
 import { co } from "jazz-tools";
 import { Select } from "../ui/Select";
+import { PostCard } from "../feed/Post";
 
 export function NewPostPage() {
   const location = useLocation();
@@ -21,16 +22,6 @@ export function NewPostPage() {
     visibility: useId(),
   };
 
-  const uploads = location.state?.uploads;
-  if (!isBlobArray(uploads)) {
-    if (navigationType === "PUSH") {
-      navigate(-1);
-      return;
-    }
-    navigate("/", { replace: true });
-    return;
-  }
-
   // TODO: this as this doesn't seem to trigger for client nav (push/pop)
   // useBeforeUnload((event) => {
   //   event.preventDefault();
@@ -41,9 +32,27 @@ export function NewPostPage() {
     resolve: { profile: { friends: true } },
   });
 
+  const uploads = location.state?.uploads;
+  useEffect(() => {
+    if (isBlobArray(uploads)) return;
+
+    if (navigationType === "PUSH") {
+      navigate(-1);
+      return;
+    }
+    navigate("/", { replace: true });
+    return;
+  }, [uploads]);
+
+  if (!me) return null;
+
+  if (!isBlobArray(uploads)) {
+    return null;
+  }
+
   return (
     <Form
-      className="flex flex-col gap-4 py-4 pb-16"
+      className="flex flex-col gap-4 pb-16"
       onSubmit={async (event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
@@ -85,11 +94,16 @@ export function NewPostPage() {
         navigate("/");
       }}
     >
-      <div>
-        {uploads.map((upload, i) => (
-          <ImagePreview key={i} image={upload} />
-        ))}
-      </div>
+      <PostCard
+        images={
+          <div>
+            {uploads.map((upload, i) => (
+              <ImagePreview key={i} image={upload} />
+            ))}
+          </div>
+        }
+        user={me}
+      />
 
       <div className="flex flex-col">
         <label htmlFor={ids.caption}>Caption</label>
