@@ -2,6 +2,7 @@ const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
 
 export function timeAgo(date: Date) {
   const diff = (date.getTime() - Date.now()) / 1000;
+
   const divisions = [
     { amount: 60, name: "seconds" },
     { amount: 60, name: "minutes" },

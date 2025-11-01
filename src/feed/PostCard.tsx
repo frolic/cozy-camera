@@ -41,8 +41,7 @@ export function PostCard({
           </div>
         ) : null}
       </div>
-
-      {caption ? <div className="p-2">{caption}</div> : null}
+      {caption}
     </div>
   );
 }
