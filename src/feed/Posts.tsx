@@ -3,6 +3,7 @@ import { Post } from "../schema";
 import { UserLabel } from "../UserLabel";
 import { RelativeTime } from "../RelativeTime";
 import { co, CoFeedEntry } from "jazz-tools";
+import { PostCard } from "./PostCard";
 
 export function Posts({
   posts,
@@ -13,37 +14,34 @@ export function Posts({
     <>
       {posts.map((post) =>
         post.value ? (
-          <div
+          <PostCard
             key={post.ref.id}
-            data-post-id={post.ref.id}
-            className="bg-white p-2 shadow"
-          >
-            {post.value.images?.map((image) =>
+            id={post.ref.id}
+            images={post.value.images?.map((image) =>
               image ? (
-                <div key={image.$jazz.id}>
-                  <Image
-                    imageId={image.$jazz.id}
-                    loading="lazy"
-                    className="w-full aspect-square object-cover"
-                  />
-                </div>
+                <Image
+                  imageId={image.$jazz.id}
+                  loading="lazy"
+                  className="w-full aspect-square object-cover"
+                />
               ) : null
             )}
-
-            <div className="p-2">
-              <div>
-                {post.by ? (
-                  <>
-                    <UserLabel user={post.by} />{" "}
-                  </>
-                ) : null}
-                {post.value.caption}
-              </div>
-              <div className="text-xs text-neutral-500">
-                <RelativeTime time={post.madeAt} />
-              </div>
-            </div>
-          </div>
+            caption={
+              <>
+                <div>
+                  {post.by ? (
+                    <>
+                      <UserLabel user={post.by} />{" "}
+                    </>
+                  ) : null}
+                  {post.value.caption}
+                </div>
+                <div className="text-xs text-neutral-500">
+                  <RelativeTime time={post.madeAt} />
+                </div>
+              </>
+            }
+          />
         ) : null
       )}
     </>

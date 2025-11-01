@@ -10,7 +10,7 @@ import { Button } from "../ui/Button";
 import { Form } from "../ui/Form";
 import { co } from "jazz-tools";
 import { Select } from "../ui/Select";
-import { PostCard } from "../feed/Post";
+import { PostCard } from "../feed/PostCard";
 
 export function NewPostPage() {
   const location = useLocation();
@@ -95,14 +95,10 @@ export function NewPostPage() {
       }}
     >
       <PostCard
-        images={
-          <div>
-            {uploads.map((upload, i) => (
-              <ImagePreview key={i} image={upload} />
-            ))}
-          </div>
-        }
-        user={me}
+        id="new"
+        images={uploads.map((upload, i) => (
+          <ImagePreview key={i} image={upload} />
+        ))}
       />
 
       <div className="flex flex-col">
