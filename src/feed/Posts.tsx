@@ -1,5 +1,5 @@
 import { Image } from "jazz-tools/react";
-import { Post } from "../schema";
+import { Post } from "../schemas";
 import { UserLabel } from "../UserLabel";
 import { RelativeTime } from "../RelativeTime";
 import { co, CoFeedEntry } from "jazz-tools";
@@ -12,20 +12,23 @@ export function Posts({
 }) {
   return (
     <>
-      {posts.map((post) => {
-        if (!post.value) return;
+      {posts.map((entry) => {
+        const post = entry.value;
+        const author = entry.by;
+        if (!post) return;
+        if (!author) return;
 
-        const owner = post.value.$jazz.owner;
+        const owner = post.$jazz.owner;
         const isPublic = owner.getRoleOf("everyone") != null;
         const visibleTo = owner.members
           .map((member) => member.account)
-          .filter((user) => !user.isMe);
+          .filter((user) => user.$jazz.id !== author.$jazz.id);
 
         return (
-          <div key={post.value.$jazz.id}>
+          <div key={post.$jazz.id}>
             <PostCard
-              id={post.value.$jazz.id}
-              images={post.value.images?.map((image) =>
+              id={post.$jazz.id}
+              images={post.images?.map((image) =>
                 image ? (
                   <Image
                     imageId={image.$jazz.id}
@@ -35,17 +38,16 @@ export function Posts({
                 ) : null
               )}
               caption={
-                <div className="p-2">
-                  {post.by ? (
-                    <>
-                      <UserLabel user={post.by} />{" "}
-                    </>
-                  ) : null}
-                  {post.value.caption}
+                <div className="p-2 text-sm">
+                  <UserLabel
+                    user={author}
+                    className="font-medium text-yellow-700"
+                  />{" "}
+                  {post.caption}
                 </div>
               }
             />
-            <div className="px-2 py-1.5 flex gap-4 justify-between text-xs leading-none text-stone-300">
+            <div className="grow flex gap-2 px-2 py-1 items-center justify-between text-xs text-stone-300">
               <div className="flex items-center gap-1">
                 {isPublic ? (
                   <>
@@ -108,7 +110,7 @@ export function Posts({
                   </>
                 )}
               </div>
-              <RelativeTime time={post.madeAt} />
+              <RelativeTime time={new Date(post.$jazz.createdAt)} />
             </div>
           </div>
         );

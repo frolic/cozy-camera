@@ -1,15 +1,14 @@
 import { Account as JazzAccount } from "jazz-tools";
 import { useAccount, useCoState } from "jazz-tools/react";
-import { Account } from "../schema";
+import { Account } from "../schemas";
 import { isFriend } from "../friends/isFriend";
 import { requestFriend } from "../friends/requestFriend";
 import { isPendingFriend } from "../friends/isPendingFriend";
-import { Link } from "react-router";
 import { Button } from "../ui/Button";
 
 export function FriendStatus({ user }: { user: JazzAccount }) {
   if (user.isMe) {
-    return <Link to="/settings">Edit profile</Link>;
+    return <p>It's you!</p>;
   }
 
   const { me } = useAccount(Account, {
@@ -27,8 +26,9 @@ export function FriendStatus({ user }: { user: JazzAccount }) {
     return <Button disabled>Add friend</Button>;
   }
 
+  // TODO: distinguish between friend request and mutual friend
   if (isFriend(them)) {
-    return <Button>Friends</Button>;
+    return <Button disabled>Friend</Button>;
   }
 
   return (

@@ -1,5 +1,5 @@
 import { co } from "jazz-tools";
-import { Account } from "../schema";
+import { Account } from "../schemas";
 
 export async function removeFriend(
   me: co.loaded<

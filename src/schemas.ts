@@ -24,7 +24,7 @@ export const Account = co
   })
   .withMigration((account) => {
     if (account.profile && !account.profile.$jazz.has("friends")) {
-      console.log("migrating friends");
+      console.log("setting up friends");
       account.profile.$jazz.set(
         "friends",
         AccountPublicData.shape.friends.create()
@@ -32,7 +32,7 @@ export const Account = co
     }
 
     if (account.profile && !account.profile.$jazz.has("friendRequests")) {
-      console.log("migrating friend requests");
+      console.log("setting up friend requests");
       const group = co.group().create();
       group.addMember("everyone", "writeOnly");
       account.profile.$jazz.set(
@@ -40,16 +40,6 @@ export const Account = co
         AccountPublicData.shape.friendRequests.create([], group)
       );
     }
-
-    // if (!account.$jazz.has("root")) {
-    //   account.$jazz.set("root", {
-    //     friends: AccountPrivateData.shape.friends.create(),
-    //     friendRequests: AccountPrivateData.shape.friendRequests.create(
-    //       [],
-    //       createEveryoneGroup("writeOnly")
-    //     ),
-    //   });
-    // }
   });
 
 /**

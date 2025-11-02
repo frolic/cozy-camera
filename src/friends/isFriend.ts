@@ -1,5 +1,5 @@
 import { co } from "jazz-tools";
-import { Account } from "../schema";
+import { Account } from "../schemas";
 
 export function isFriend(
   them: co.loaded<typeof Account, { profile: { friends: true } }>

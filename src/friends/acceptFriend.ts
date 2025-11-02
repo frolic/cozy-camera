@@ -1,5 +1,5 @@
 import { co, Account as JazzAccount } from "jazz-tools";
-import { Account } from "../schema";
+import { Account } from "../schemas";
 
 export function acceptFriend(
   me: co.loaded<

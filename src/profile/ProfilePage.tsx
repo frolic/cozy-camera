@@ -1,8 +1,12 @@
 import { useCoState, Image } from "jazz-tools/react";
-import { Account, PostFeed } from "../schema";
+import { Account, PostFeed } from "../schemas";
 import { Posts } from "../feed/Posts";
 import { useParams } from "react-router";
 import { FriendStatus } from "./FriendButton";
+import { ImageUpload } from "../ImageUpload";
+import { co } from "jazz-tools";
+import { createImage } from "jazz-tools/media";
+import { FriendRequests } from "./FriendRequests";
 
 export function ProfilePage() {
   const params = useParams<{ userId: string }>();
@@ -27,11 +31,30 @@ export function ProfilePage() {
   return (
     <div className="border-t border-stone-200 space-y-8 py-8">
       <div className="flex gap-4">
-        <div className="size-24 aspect-square rounded-full bg-stone-200">
+        <ImageUpload
+          disabled={!user.isMe}
+          className="size-24 aspect-square object-cover rounded-full overflow-clip bg-stone-200 peer-enabled:cursor-pointer peer-enabled:hover:opacity-50"
+          onChange={async (files) => {
+            if (!user.isMe) return;
+
+            const file = files[0];
+            if (!file) return;
+
+            const owner = co.group().create();
+            owner.addMember("everyone", "reader");
+
+            const image = await createImage(file, { owner, maxSize: 600 });
+
+            user.profile.$jazz.set("image", image);
+          }}
+        >
           {user.profile.image ? (
-            <Image imageId={user.profile.image.$jazz.id} />
+            <Image
+              imageId={user.profile.image.$jazz.id}
+              className="size-full object-cover"
+            />
           ) : null}
-        </div>
+        </ImageUpload>
         <div className="space-y-3">
           <div>
             <div className="text-xl leading-tight text-black">
@@ -48,6 +71,7 @@ export function ProfilePage() {
           <FriendStatus user={user} />
         </div>
       </div>
+      <FriendRequests user={user} />
       <div className="-mx-2 grid grid-cols-2 gap-3">
         <Posts posts={posts} />
       </div>

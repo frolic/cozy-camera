@@ -1,6 +1,6 @@
 import { startWorker } from "jazz-tools/worker";
 import { co } from "jazz-tools";
-import { PostFeed } from "../../src/schema";
+import { PostFeed } from "../../src/schemas";
 
 const { shutdownWorker } = await startWorker({
   accountID: process.env.VITE_JAZZ_ADMIN_ACCOUNT,

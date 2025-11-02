@@ -1,5 +1,5 @@
 import { useAccount } from "jazz-tools/react";
-import { Account } from "../schema";
+import { Account } from "../schemas";
 import { UserLabel } from "../UserLabel";
 import { removeFriend } from "../friends/removeFriend";
 import { acceptFriend } from "../friends/acceptFriend";
@@ -17,12 +17,6 @@ export function Settings() {
     },
   });
   if (!me) return;
-
-  console.log(
-    "my friend requests",
-    me.$jazz.id,
-    me.profile.friendRequests.map((request) => request.from.$jazz.id)
-  );
 
   return (
     <div className="border-t border-stone-200 space-y-4 py-4">

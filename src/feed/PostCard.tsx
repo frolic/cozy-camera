@@ -4,14 +4,16 @@ export function PostCard({
   id,
   images,
   caption,
+  overlay,
 }: {
   id: string;
   images: ReactNode;
   caption?: ReactNode;
+  overlay?: ReactNode;
 }) {
   const imagesCount = Children.count(images);
   return (
-    <div className="bg-white p-2 shadow">
+    <div className="bg-white p-2 space-y-2 shadow">
       <div className="w-full aspect-square grid *:col-start-1 *:row-start-1">
         <div className="flex overflow-x-scroll snap-x snap-mandatory [scrollbar-width:none] scroll-smooth">
           {Children.map(images, (child, i) => (
@@ -40,6 +42,7 @@ export function PostCard({
             ))}
           </div>
         ) : null}
+        {overlay}
       </div>
       {caption}
     </div>

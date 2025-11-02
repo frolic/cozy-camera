@@ -1,7 +1,7 @@
 import { createImage } from "jazz-tools/media";
 import { useAccount } from "jazz-tools/react";
 import { useEffect, useId } from "react";
-import { Account, Post, PostFeed } from "../schema";
+import { Account, Post, PostFeed } from "../schemas";
 import { useLocation, useNavigate, useNavigationType } from "react-router";
 import { isBlobArray } from "./isBlobArray";
 import { ImagePreview } from "./ImagePreview";

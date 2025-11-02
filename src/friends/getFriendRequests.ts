@@ -1,13 +1,11 @@
 import { co } from "jazz-tools";
 import { Account } from "../schemas";
 
-export function isPendingFriend(
+export function getFriendRequests(
   them: co.loaded<
     typeof Account,
     { profile: { friendRequests: { $each: { from: true } } } }
   >
 ) {
-  return them.profile.friendRequests.some(
-    (request) => request.from.isMe && !request.isDeleted
-  );
+  return them.profile.friendRequests.filter((request) => !request.isDeleted);
 }

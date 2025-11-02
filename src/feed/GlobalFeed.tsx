@@ -1,5 +1,5 @@
 import { useCoState } from "jazz-tools/react";
-import { PostFeed } from "../schema";
+import { PostFeed } from "../schemas";
 import { Posts } from "./Posts";
 
 export function GlobalFeed() {
