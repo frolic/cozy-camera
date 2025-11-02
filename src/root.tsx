@@ -56,7 +56,7 @@ createRoot(document.getElementById("root")!).render(
           </Routes>
         </Layout>
       </BrowserRouter>
-      <JazzInspector />
+      {import.meta.env.DEV ? <JazzInspector /> : null}
     </JazzReactProvider>
   </StrictMode>
 );
