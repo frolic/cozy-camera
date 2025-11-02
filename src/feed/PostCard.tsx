@@ -14,7 +14,7 @@ export function PostCard({
   const imagesCount = Children.count(images);
   return (
     <div className="bg-white p-2 space-y-2 shadow">
-      <div className="w-full aspect-square grid *:col-start-1 *:row-start-1">
+      <div className="w-full aspect-square grid *:col-start-1 *:row-start-1 bg-stone-200">
         <div className="flex overflow-x-scroll snap-x snap-mandatory [scrollbar-width:none] scroll-smooth">
           {Children.map(images, (child, i) => (
             <div
