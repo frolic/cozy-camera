@@ -3,7 +3,6 @@ import { useId } from "react";
 import { Link, useNavigate } from "react-router";
 import { Account } from "./schemas";
 import { getFriendRequests } from "./friends/getFriendRequests";
-import { useCoState } from "jazz-tools/react-core";
 
 export function TopNav() {
   const inputId = useId();
