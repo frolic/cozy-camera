@@ -17,9 +17,18 @@ export function Authenticated({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="border-t border-stone-200 h-full flex flex-col items-center justify-center">
-      <div className="flex flex-col gap-4 py-4">
-        <Button onClick={() => auth.logIn()}>Sign in</Button>
-        <span className="text-center italic text-neutral-500">or</span>
+      <div className="h-full flex flex-col gap-4 py-12 justify-evenly">
+        <Button
+          onClick={() => auth.logIn()}
+          className="w-full justify-center text-lg"
+        >
+          Sign in
+        </Button>
+        <span className="flex gap-4 items-center">
+          <span className="grow border-t border-stone-200" />
+          <span className="shrink-0 text-center italic text-stone-400">or</span>
+          <span className="grow border-t border-stone-200" />
+        </span>
         <Form
           onSubmit={async (event) => {
             event.preventDefault();
@@ -29,10 +38,17 @@ export function Authenticated({ children }: { children: React.ReactNode }) {
           className="flex flex-col gap-2"
         >
           <div className="flex flex-col">
-            <label htmlFor={ids.name}>Your name</label>
-            <Input id={ids.name} name="name" required />
+            <label htmlFor={ids.name}>Display name</label>
+            <Input
+              id={ids.name}
+              name="name"
+              required
+              placeholder="Ron Swanson"
+            />
           </div>
-          <Button type="submit">Create account</Button>
+          <Button type="submit" className="w-full justify-center text-lg">
+            Create account
+          </Button>
         </Form>
       </div>
     </div>
