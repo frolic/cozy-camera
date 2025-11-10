@@ -18,6 +18,7 @@ import { ProfileRedirect } from "./ProfileRedirect.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <JazzReactProvider
+      guestMode={false}
       sync={{
         peer: `wss://cloud.jazz.tools/?key=${apiKey}`,
       }}

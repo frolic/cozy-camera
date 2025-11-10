@@ -52,7 +52,7 @@ export function NewPostPage() {
 
   return (
     <Form
-      className="flex flex-col gap-4 pb-16"
+      className="flex flex-col gap-4 pb-48"
       onSubmit={async (event) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
