@@ -1,12 +1,15 @@
 import { Children, ReactNode } from "react";
+import { Link } from "react-router";
 
 export function PostCard({
   id,
+  url,
   images,
   caption,
   overlay,
 }: {
   id: string;
+  url?: string;
   images: ReactNode;
   caption?: ReactNode;
   overlay?: ReactNode;

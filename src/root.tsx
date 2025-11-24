@@ -14,6 +14,8 @@ import { GlobalFeed } from "./feed/GlobalFeed.tsx";
 import { NotFoundPage } from "./NotFoundPage.tsx";
 import { ProfilePage } from "./profile/ProfilePage.tsx";
 import { ProfileRedirect } from "./ProfileRedirect.tsx";
+import { PostPage } from "./post/PostPage.tsx";
+import { Logo } from "./ui/Logo.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -53,6 +55,8 @@ createRoot(document.getElementById("root")!).render(
               )}
             />
             <Route path="/users/:userId" Component={ProfilePage} />
+            <Route path="/posts/:postId" Component={PostPage} />
+            <Route path="/ui/logo" Component={Logo} />
             <Route path="*" Component={NotFoundPage} />
           </Routes>
         </Layout>

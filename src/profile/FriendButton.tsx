@@ -5,14 +5,18 @@ import { isFriend } from "../friends/isFriend";
 import { requestFriend } from "../friends/requestFriend";
 import { isPendingFriend } from "../friends/isPendingFriend";
 import { Button } from "../ui/Button";
+import { removeFriend } from "../friends/removeFriend";
 
 export function FriendStatus({ user }: { user: JazzAccount }) {
+  // TODO: move this out and do it where the status button is rendered
   if (user.isMe) {
     return <p>It's you!</p>;
   }
 
   const { me } = useAccount(Account, {
-    resolve: { profile: { friends: true } },
+    resolve: {
+      profile: { friends: true, friendRequests: { $each: { from: true } } },
+    },
   });
   const them = useCoState(Account, user.$jazz.id, {
     resolve: {
@@ -28,7 +32,18 @@ export function FriendStatus({ user }: { user: JazzAccount }) {
 
   // TODO: distinguish between friend request and mutual friend
   if (isFriend(them)) {
-    return <Button disabled>Friend</Button>;
+    return (
+      <>
+        <Button disabled>Friend</Button>
+        <button
+          type="button"
+          className="p-2 cursor-pointer text-stone-400 hover:text-red-500"
+          onClick={() => removeFriend(me, them)}
+        >
+          &times;
+        </button>
+      </>
+    );
   }
 
   return (

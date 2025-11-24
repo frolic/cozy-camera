@@ -1,6 +1,11 @@
+- Migrate helper methods to use IDs instead of hydated covalues
 - Add page to view photo
 - Add photo likes/comments?
 - Add email for account recovery
-- Deploy somewhere
+- Replace "public" with auto-invite to some "team" or "curated" group
+- Improve friend request flow (via group invite?) and friend states
+- Add friend management to profile
+- Allow changing display name
+- Allow updating/deleting
 - Improve images (store original but split out the one to display in feed, something like max size 4in at 300 dpi and cropped/resized to max 3in x 4in)
 - Design pass

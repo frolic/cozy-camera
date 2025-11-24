@@ -28,6 +28,7 @@ export function Posts({
           <div key={post.$jazz.id}>
             <PostCard
               id={post.$jazz.id}
+              url={`/posts/${post.$jazz.id}`}
               images={post.images?.map((image) =>
                 image ? (
                   <Image
