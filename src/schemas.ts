@@ -22,7 +22,21 @@ export const Account = co
     profile: AccountPublicData,
     root: AccountPrivateData,
   })
-  .withMigration((account) => {
+  .withMigration((account, creationProps) => {
+    if (!account.$jazz.has("profile")) {
+      console.log("setting up profile");
+      const group = co.group().create();
+      group.addMember("everyone", "writeOnly");
+      account.$jazz.set("profile", {
+        name: creationProps?.name ?? "Anonymous user",
+        friends: AccountPublicData.shape.friends.create(),
+        friendRequests: AccountPublicData.shape.friendRequests.create(
+          [],
+          group
+        ),
+      });
+    }
+
     if (account.profile && !account.profile.$jazz.has("friends")) {
       console.log("setting up friends");
       account.profile.$jazz.set(
