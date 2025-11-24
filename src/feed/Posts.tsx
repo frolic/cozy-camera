@@ -34,6 +34,8 @@ export function Posts({
                   <Image
                     imageId={image.$jazz.id}
                     loading="lazy"
+                    width={1024}
+                    height={1024}
                     className="w-full aspect-square object-cover"
                   />
                 ) : null

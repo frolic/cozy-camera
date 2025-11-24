@@ -51,6 +51,8 @@ export function ProfilePage() {
           {user.profile.image ? (
             <Image
               imageId={user.profile.image.$jazz.id}
+              width={512}
+              height={512}
               className="size-full object-cover"
             />
           ) : null}
