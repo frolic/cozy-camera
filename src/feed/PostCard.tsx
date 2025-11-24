@@ -1,9 +1,9 @@
 import { Children, ReactNode } from "react";
-import { Link } from "react-router";
+// import { Link } from "react-router";
 
 export function PostCard({
   id,
-  url,
+  // url,
   images,
   caption,
   overlay,

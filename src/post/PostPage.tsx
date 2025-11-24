@@ -25,7 +25,7 @@ export function PostPage() {
         <div className="grid *:col-start-1 *:row-start-1">
           <div className="flex overflow-x-scroll snap-x snap-mandatory [scrollbar-width:none] scroll-smooth">
             {post.images.map((image, i) => {
-              const [width, height] = image.originalSize;
+              // const [width, height] = image.originalSize;
               return (
                 <div
                   id={`${id}-${i}`}
