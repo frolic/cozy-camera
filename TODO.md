@@ -9,3 +9,5 @@
 - Allow updating/deleting
 - Improve images (store original but split out the one to display in feed, something like max size 4in at 300 dpi and cropped/resized to max 3in x 4in)
 - Design pass
+- Deploy with GH, set secrets with [`gh secret set -f .env`](https://cli.github.com/manual/gh_secret_set)
+- Only load Jazz image data as image comes into viewport
